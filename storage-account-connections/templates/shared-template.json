@@ -68,10 +68,7 @@
             "copy": {
                 "name": "containerCopy",
                 "count": "[length(parameters('containers'))]"
-            },
-            "properties": {
-                "publicAccess": "Container"
-            },
+            },            
             "resources": []
         }
     ],
