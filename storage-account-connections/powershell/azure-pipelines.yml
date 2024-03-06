@@ -1,7 +1,7 @@
 variables: 
-  location: westus
-  groupId: cse01
-  abbrevLocationName: westus
+  location: canadacentral
+  groupId: cla001
+  abbrevLocationName: canadacentral
   instanceCount: 1
   identifier: sample-storage-conn
   sampleDirectory: storage-account-connections
@@ -32,7 +32,7 @@ stages:
     - task: AzureResourceGroupDeployment@2
       name: SharedResourcesDeployment
       inputs:
-        azureSubscription: 'Azure Samples Subscription'
+        azureSubscription: 'LogicApp-SC'
         action: 'Create Or Update Resource Group'
         resourceGroupName: $(resourceGroupName)
         location: $(location)
@@ -49,7 +49,7 @@ stages:
     - task: AzurePowerShell@4
       name: DeployLogicAppSample
       inputs:
-        azureSubscription: 'Azure Samples Subscription'
+        azureSubscription: 'LogicApp-SC'
         ScriptType: 'FilePath'
         ScriptPath: '$(logicAppDeployScript)'
         FailOnStandardError: true
